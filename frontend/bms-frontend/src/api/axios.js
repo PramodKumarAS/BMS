@@ -8,5 +8,5 @@ export const axiosInstance = axios.create({
         'Content-Type': 'application/json',
         "Authorization": `Bearer ${localStorage.getItem("token")}`
     },
-    baseURL: "https://fullstack-app-be.onrender.com"
+    baseURL: "https://fullstack-app-backend-xb0e.onrender.com"
 });
