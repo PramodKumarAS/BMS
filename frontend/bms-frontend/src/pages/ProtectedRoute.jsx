@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 
 function ProtectedRoute({ children }) {
-  const {user} = useSelector((state) => state.users);
+  const { user } = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -34,15 +34,15 @@ function ProtectedRoute({ children }) {
         {
           label: (
             <span
-            onClick={() => {
-              if (user.isAdmin) {
-                navigate("/admin");
-              } else if (user.isPartner) {
-                navigate("/partner");
-              } else {
-                navigate("/profile");
-              }
-            }}
+              onClick={() => {
+                if (user.isAdmin) {
+                  navigate("/admin");
+                } else if (user.isPartner) {
+                  navigate("/partner");
+                } else {
+                  navigate("/profile");
+                }
+              }}
             >
               My Profile
             </span>
@@ -69,7 +69,7 @@ function ProtectedRoute({ children }) {
 
   const getValidUser = async () => {
     try {
-     //Before fetching, turn loading on 
+      //Before fetching, turn loading on 
       dispatch(showLoading());
 
       const response = await getCurrentUser();
@@ -113,11 +113,11 @@ function ProtectedRoute({ children }) {
             }}
           >
             <h3 className="demo-logo text-white m-0" style={{ color: "white" }}>
-              Book My Show
+              Book Our Show
             </h3>
             <Menu theme="dark" mode="horizontal" items={navItems} />
           </Header>
-          <div style={{ padding: 24, height: "90vh",  minHeight: 380, background: "#fff" }}>
+          <div style={{ padding: 24, height: "90vh", minHeight: 380, background: "#fff" }}>
             {children}
           </div>
         </Layout>
