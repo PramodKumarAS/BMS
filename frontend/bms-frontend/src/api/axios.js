@@ -8,5 +8,5 @@ export const axiosInstance = axios.create({
         'Content-Type': 'application/json',
         "Authorization": `Bearer ${localStorage.getItem("token")}`
     },
-    baseURL: "https://bms-cw46.onrender.com"
+    baseURL: "https://bms-ww4x.onrender.com"
 });
