@@ -8,6 +8,7 @@ const movieRouter = require("./routes/movieRoute")
 const theatreRouter = require("./routes/theatreRoutes")
 const showsRouter = require("./routes/showRoutes")
 const bookingRouter = require("./routes/bookingRoute")
+const path = require("path");
 
 
 // Homeworks
@@ -16,8 +17,14 @@ const bookingRouter = require("./routes/bookingRoute")
 
 // Add in middleware to handle request body as JSON
 app.use(express.json())
+// Serve static files from frontend/dist
+app.use(express.static(path.join(__dirname, "frontend/dist")));
 app.use(cors())
 
+// Handle all other routes to serve index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+});
 
 // Registering my root level routes
 app.use("/api/user", userRouter)
