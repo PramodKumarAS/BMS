@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(cors())
 
 // ✅ Serve static files from frontend/dist
-app.use(express.static(path.join(__dirname, "frontend/dist")))
+app.use(express.static(path.join(__dirname, "../frontend/bmsfrontend")));
 
 // ✅ Registering API routes
 app.use("/api/user", userRouter)
@@ -27,7 +27,7 @@ app.use("/api/bookings", bookingRouter)
 
 // ✅ Handle SPA client-side routing fallback
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/bmsfrontend", "index.html"));
 })
 
 const { connectDB } = require("./config/db")
