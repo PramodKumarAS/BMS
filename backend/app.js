@@ -26,9 +26,9 @@ app.use("/api/shows", showsRouter)
 app.use("/api/bookings", bookingRouter)
 
 // ✅ Handle SPA client-side routing fallback
-app.get("*", (req, res) => {
+app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/bms-frontend", "index.html"));
-})
+});
 
 const { connectDB } = require("./config/db")
 connectDB()
