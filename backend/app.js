@@ -21,10 +21,10 @@ app.use(express.json())
 // app.use(express.static(path.join(__dirname, "frontend/dist")));
 app.use(cors())
 
-// Handle all other routes to serve index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
-});
+// // Handle all other routes to serve index.html
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+// });
 
 // Registering my root level routes
 app.use("/api/user", userRouter)
