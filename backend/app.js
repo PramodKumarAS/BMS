@@ -17,8 +17,8 @@ const path = require("path");
 
 // Add in middleware to handle request body as JSON
 app.use(express.json())
-// Serve static files from frontend/dist
-app.use(express.static(path.join(__dirname, "frontend/dist")));
+// // Serve static files from frontend/dist
+// app.use(express.static(path.join(__dirname, "frontend/dist")));
 app.use(cors())
 
 // Handle all other routes to serve index.html
